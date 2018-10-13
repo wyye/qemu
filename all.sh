@@ -7,11 +7,11 @@ trap ctrl_c INT
 
 function cleanup {
 	echo "Cleaning up"
+	wait ${VIRT1}
+	wait ${VIRT2}
 	cd ./dhcpd
 	./clear.sh
 	cd ..
-	wait ${VIRT1}
-	wait ${VIRT2}
 	exit
 }
 

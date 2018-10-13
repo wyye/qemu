@@ -17,6 +17,7 @@ echo "Assign host address to bridge"
 ip addr add dev virt_bridge 192.168.20.10/24
 
 echo "Enable DHCP"
+touch dhcpd.leases
 dhcpd -cf dhcpd.config -lf dhcpd.leases -pf dhcpd.pid virt_bridge
 
 echo "Set up NAT"
