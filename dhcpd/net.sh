@@ -1,6 +1,8 @@
 #!/bin/bash
 
-IF_EXT=wlp58s0
+#IF_EXT=wlp58s0
+#IF_EXT=wlp4s0
+IF_EXT=$(ip link | grep wlp | awk -F'[ :]' '{print $3}')
 IF_INT=virt_bridge
 
 echo "Set up virtual adapters and bridge"
